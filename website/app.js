@@ -15,7 +15,13 @@ function generateBtnHandler(event) {
 
     getWebApiData(zip)
         .then(function (webApidata) {
-            return postData('/entries', { date: 'Today', personalFeeling, temp: webApidata.main.temp });
+            const data = {
+                date: 'Today',
+                personalFeeling,
+                // store data in temp key only if city is found (code = 200 means success) and temp exists
+                temp: (webApidata.cod === 200 && webApidata.main.temp) ? webApidata.main.temp : undefined
+            };
+            return postData('/entries', data);
         }).then(function (data) {
             return getData('/entries')
         }).then(function (data) {

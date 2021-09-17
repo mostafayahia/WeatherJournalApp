@@ -28,10 +28,11 @@ app.listen(port, function () {
 });
 
 // Initialize all route with a callback function
-app.get('/all', getAllData);
+app.get('/entries', getEntries);
 
 // Callback function to complete GET '/all'
-function getAllData(req, res) {
+function getEntries(req, res) {
+    res.statusCode = 200;
     res.send(data);
 }
 

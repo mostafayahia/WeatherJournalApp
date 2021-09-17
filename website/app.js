@@ -19,7 +19,13 @@ function generateBtnHandler(event) {
         }).then(function (data) {
             return getData('/entries')
         }).then(function (data) {
-            console.dir(data);
+            if (!data || data.lenght === 0) {
+                console.log('error', 'data after get request to our server is ' + data);
+                return;
+            }
+
+            const lastIndex = data.length - 1;
+            updateUI(data[lastIndex]);
         });
 }
 
@@ -65,3 +71,12 @@ async function getData(url = '') {
     }
 }
 
+function updateUI(data) {
+    const dateElement = document.querySelector('#date')
+    const tempElement = document.querySelector('#temp');
+    const contentElement = document.querySelector('#content');
+
+    dateElement.innerHTML = `Date: ${data.date ? data.date : 'NA'}`;
+    tempElement.innerHTML = `Temperature: ${data.temp ? data.temp : 'NA'}`;
+    contentElement.innerHTML = `Your Personal Feeling: ${data.personalFeeling ? data.personalFeeling : 'NA'}`;
+}

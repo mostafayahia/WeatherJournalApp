@@ -16,8 +16,10 @@ function generateBtnHandler(event) {
     getWebApiData(zip)
         .then(function (webApidata) {
             return postData('/entries', { date: 'Today', personalFeeling, temp: webApidata.main.temp });
-        }).then (function (data) {
-            console.log('data array after posting our data: ', data);
+        }).then(function (data) {
+            return getData('/entries')
+        }).then(function (data) {
+            console.dir(data);
         });
 }
 
@@ -52,3 +54,14 @@ async function postData(url = '', data = {}) {
 }
 
 /* Function to GET Project Data */
+async function getData(url = '') {
+    const response = await fetch(url);
+
+    try {
+        const newData = await response.json();
+        return newData;
+    } catch (error) {
+        console.log('error', error);
+    }
+}
+

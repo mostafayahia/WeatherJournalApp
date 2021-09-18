@@ -20,7 +20,6 @@ body{
 .holder{
     display: flex;
     flex-direction: column;
-    align-items: left;
     justify-content: center;
     width: 700px;
     margin: 0 auto;

@@ -26,9 +26,9 @@ Most of our work inside `server.js` (server side code) and `website/app.js` (cli
 
 ## Run-App
 - Please, make sure to put **your own api key** inside `website/app.js`, you can create account and get one from [OpenWeatherMap](https://openweathermap.org/).
-- Please, make sure you have already installed these packages (express, cors, body-parser). you can install them easily by running the following command 
+- Please, make sure you have already installed these packages (express, cors, body-parser). If `node_modules` direcotry not exists in your root directory, you can install the packages easily by running the following command 
 ```
-npm install <your-package-name>
+npm install
 ```
 - Please, make sure the server is running by running the following command in the root directory
 ```

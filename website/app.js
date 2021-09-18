@@ -37,7 +37,7 @@ function generateBtnHandler(event) {
 
 /* Function to GET Web API Data*/
 async function getWebApiData(zip, baseUrl = BASE_URL, apiKey = API_KEY) {
-    const response = await fetch(baseUrl + `?zip=${zip}&appid=${apiKey}`);
+    const response = await fetch(baseUrl + `?zip=${zip}&appid=${apiKey}&units=imperial`);
     try {
         const data = await response.json();
         return data;

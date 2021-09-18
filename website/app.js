@@ -16,7 +16,7 @@ function generateBtnHandler(event) {
     getWebApiData(zip)
         .then(function (webApiData) {
             const data = {
-                date: 'Today',
+                date: new Date().toDateString().slice(0, -5),
                 personalFeeling,
                 // store data in temp key only if city is found (code = 200 means success) and temp exists
                 temp: (webApiData.cod === 200 && webApiData.main.temp) ? webApiData.main.temp : undefined

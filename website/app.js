@@ -14,12 +14,12 @@ function generateBtnHandler(event) {
     const zip = document.querySelector('#zip').value;
 
     getWebApiData(zip)
-        .then(function (webApidata) {
+        .then(function (webApiData) {
             const data = {
                 date: 'Today',
                 personalFeeling,
                 // store data in temp key only if city is found (code = 200 means success) and temp exists
-                temp: (webApidata.cod === 200 && webApidata.main.temp) ? webApidata.main.temp : undefined
+                temp: (webApiData.cod === 200 && webApiData.main.temp) ? webApiData.main.temp : undefined
             };
             return postData('/entries', data);
         }).then(function (data) {

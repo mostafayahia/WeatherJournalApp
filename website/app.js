@@ -25,13 +25,12 @@ function generateBtnHandler(event) {
         }).then(function (data) {
             return getData('/entries')
         }).then(function (data) {
-            if (!data || data.length === 0) {
+            if (!data) {
                 console.log('error', 'data after get request to our server is ' + data);
                 return;
             }
 
-            const lastIndex = data.length - 1;
-            updateUI(data[lastIndex]);
+            updateUI(data);
         });
 }
 

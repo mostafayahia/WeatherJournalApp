@@ -25,7 +25,7 @@ function generateBtnHandler(event) {
         }).then(function (data) {
             return getData('/entries')
         }).then(function (data) {
-            if (!data || data.lenght === 0) {
+            if (!data || data.length === 0) {
                 console.log('error', 'data after get request to our server is ' + data);
                 return;
             }

@@ -8,7 +8,7 @@ body{
     display: grid;
     grid-auto-rows: minmax(150px, auto);
     grid-auto-columns: 100%;
-    height: auto;
+    height: 90vh;
     color: #f0d43a;
     justify-content: center;
     grid-gap: 1em;
@@ -26,9 +26,15 @@ body{
     margin: 0 auto;
 }
 
-.holder * {
-    margin-top: 1em;
-    font-size: 1em;
+.holder > * {
+    font-size: 1.2em;
+}
+
+.holder.zip {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
 }
 
 .entry{
@@ -62,12 +68,13 @@ body{
 label{
     display:block;
     font-size: 27px;
+    margin-right: 1em;
 }
 
 input{
     display:block;
     height: 60px;
-    width: 600px;
+    width: 400px;
     background:black;
     color: #f0d43a;
     font-size: 20px;
@@ -85,6 +92,7 @@ button{
     font-family: 'Oswald', sans-serif;
     border: none;
     box-shadow: 2px 4px 5px #444;
+    margin-top: 0.3em;
 }
 h1{
     font-size: 36px;
@@ -96,6 +104,7 @@ textarea{
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
     padding: 0.3em;
+    margin-top: 0.3em;
 }
 /* Reset style for HTML element on active to have no border*/
 input:focus,
